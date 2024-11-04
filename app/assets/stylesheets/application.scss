@@ -1,0 +1,32 @@
+@import 'home/*';
+
+body,
+html {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    background: linear-gradient(185deg, rgb(2, 6, 23), rgb(2, 6, 23));
+
+    /* Personalização da barra de rolagem */
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: rgba(50, 62, 74, 0.692);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgb(2, 6, 23) 10%, rgb(36, 2, 63) 35%, rgb(56, 5, 104) 100%);
+        border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgb(107, 126, 153);
+    }
+
+    #about, #skills, #projects {
+        scroll-margin-top: 50px;
+    }
+}
