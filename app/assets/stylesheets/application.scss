@@ -6,7 +6,7 @@ html {
     overflow-y: auto;
     overflow-x: hidden;
     padding: 0;
-    background: linear-gradient(185deg, rgb(2, 6, 23), rgb(2, 6, 23));
+    background-color: rgb(0, 0, 0) !important;
 
     /* Personalização da barra de rolagem */
     &::-webkit-scrollbar {
@@ -24,9 +24,5 @@ html {
 
     &::-webkit-scrollbar-thumb:hover {
         background: rgb(107, 126, 153);
-    }
-
-    #about, #skills, #projects {
-        scroll-margin-top: 50px;
     }
 }
