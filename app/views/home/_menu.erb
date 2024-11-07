@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container-fluid">
+    <div class="container-fluid container-nav">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <%= image_tag 'logo.png', alt: 'Logo', width: 24, height: 24, class: 'me-2 d-none d-lg-block' %>
-            <span class="d-none d-lg-inline">Crunchyroll</span>
-            <%= image_tag 'logo.png', alt: 'Logo', width: 24, height: 24, class: 'd-lg-none' %>
+            <%= image_tag 'logo.png', alt: 'Logo', width: 26, height: 24, class: 'logo-nav me-1 d-none d-lg-block' %>
+            <span class="d-none d-lg-inline title-nav">Crunchyroll</span>
+            <%= image_tag 'logo.png', alt: 'Logo', width: 26, height: 24, class: 'd-lg-none' %>
         </a>
 
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item">
-                <a class="btn btn-primary me-2" href="#">Login</a>
+                <a class="btn btn-dark bg-black border-dark border-opacity-10" href="#">LOGIN</a>
             </li>
             <li class="nav-item">
-                <a class="btn btn-secondary" href="#">Explorar</a>
+                <a class="btn btn-dark bg-transparent border-white border-2" href="#">EXPLORAR</a>
             </li>
         </ul>
     </div>
