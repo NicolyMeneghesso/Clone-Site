@@ -1,62 +1,153 @@
 .navbar {
     background-color: rgb(35, 37, 43);
     height: 3.75rem;
+    padding-left: 4% !important;
+    padding-right: 4% !important;
 }
 
+.nav-item {
+    background-color: transparent;
+    height: 3.75rem;
+    width: auto;
+    align-items: center;
+    display: flex;
+    padding: 0 10px;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+
+    &:hover,
+    &.show {
+        background-color: rgba(20, 20, 20, 0.966) !important;
+    }
+}
+
+.nav-item.dropdown {
+    background-color: transparent;
+
+    &.show {
+        background-color: rgba(20, 20, 20, 0.966); 
+    }
+
+    &:hover {
+        background-color: rgba(20, 20, 20, 0.966); 
+    }
+
+    .dropdown-toggle {
+        color: rgb(255, 255, 255); 
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-menu {
+        background-color: rgb(20, 20, 20); 
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+}
+
+.nav-link {
+    color: rgb(218, 218, 218) !important;
+}
+
+
+/* Logo Crunchyroll */
 .logo-container {
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: color 0.3s ease;
 
-    &:hover .logo-svg {
-        fill: rgb(255, 255, 255);
-    }
+    &:hover {
+        .logo-svg {
+            fill: rgb(255, 255, 255);
+        }
 
-    &:hover .title-nav {
-        color: rgb(255, 255, 255); 
-    }
-}
-
-.title-nav {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 600;
-    color: rgb(255, 100, 10);
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.logo-svg {
-    width: 28px;
-    height: 26px;
-    fill: rgb(255, 100, 10); 
-    transition: fill 0.3s ease;
-}
-
-.btn-dark {
-    border-radius: 0 !important;
-    margin-right: 0.6rem !important;
-    width: 120px;
-    height: 40px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.04em;
-    text-align: center;
-    transition: background-color 0.3s ease;
-
-    &.bg-black:hover {
-        background-color: rgba(20, 20, 20, 0.966) !important; 
-    }
-
-    &.bg-transparent {
-        color: rgba(255, 255, 255, 0.75); 
-        border-color: rgba(255, 255, 255, 0.75) !important; 
-        transition: color 0.3s ease, border-color 0.3s ease;
-
-        &:hover {
-            color: rgb(255, 255, 255); 
-            border-color: rgb(255, 255, 255) !important; 
+        .title-nav {
+            color: rgb(255, 255, 255);
         }
     }
+
+    .logo-svg {
+        width: 28px;
+        height: 26px;
+        fill: rgb(255, 100, 10);
+        transition: fill 0.3s ease;
+    }
+
+    .title-nav {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 600;
+        color: rgb(255, 100, 10);
+        font-size: 20px;
+        transition: color 0.3s ease;
+    }
 }
+
+/*Cong Menu Noticias e Navegar*/
+.dropdown-menu {
+    background-color: rgb(20, 20, 20);
+    min-width: 18.75rem;
+    padding: 0.625rem 0;
+    margin-top: -1px !important;
+    border: none !important;
+    border-radius: 0 !important;
+
+    &.show {
+        background-color: rgba(20, 20, 20, 0.966) !important;
+    }
+
+    .dropdown-item {
+        color: rgb(248, 245, 245) !important;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+        padding: 0 10px;
+
+        &:hover {
+            background-color: rgba(35, 37, 43, 0.9);
+            color: #fff !important;
+        }
+    }
+
+    .dropdown-columns {
+        display: flex; /* Colunas lado a lado */
+        gap: 10px;
+        padding: 10px;
+        min-width: 850px; /* Largura mínima do dropdown */
+
+        .dropdown-column {
+            width: 200px;
+        }
+
+        .first-column {
+            width: 220px;
+        }
+    }
+
+    .dropdown-item-2 {
+        width: 18.75rem;
+    }
+}
+
+/* Estilo do texto 'Gêneros' */
+.genero-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(248, 245, 245);
+    height: 42px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* Linha divisória vertical */
+.vertical-divider {
+    width: 1px;
+    height: auto;
+    background-color: rgba(218, 218, 218, 0.623);
+    border: none;
+    margin: 0 12px;
+    align-self: stretch;
+}
+
