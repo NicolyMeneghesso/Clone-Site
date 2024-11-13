@@ -82,72 +82,79 @@
     }
 }
 
-/*Cong Menu Noticias e Navegar*/
+/*Conf Menu Noticias e Navegar*/
 .dropdown-menu {
-    background-color: rgb(20, 20, 20);
-    min-width: 18.75rem;
-    padding: 0.625rem 0;
     margin-top: -1px !important;
-    border: none !important;
     border-radius: 0 !important;
-
-    &.show {
-        background-color: rgba(20, 20, 20, 0.966) !important;
-    }
-
+    width: 861.4px;
+  
+    /* Estilo geral para os itens do menu */
     .dropdown-item {
-        color: rgb(248, 245, 245) !important;
-        height: 42px;
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-        font-family: "Lato", sans-serif;
-        padding: 0 10px;
-
-        &:hover {
-            background-color: rgba(35, 37, 43, 0.9);
-            color: #fff !important;
-        }
+      color: rgb(218, 218, 218) !important;
+      height: 42px;
+      font-size: 14px;
+      font-family: "Lato", sans-serif;
+      padding: 12px 16px;
+  
+      &:hover {
+        background-color: rgba(35, 37, 43, 0.9);
+        color: #fff !important;
+      }
     }
-
+  
+    /* Configuração do layout das colunas */
     .dropdown-columns {
-        display: flex; /* Colunas lado a lado */
-        gap: 10px;
-        padding: 10px;
-        min-width: 850px; /* Largura mínima do dropdown */
-
-        .dropdown-column {
-            width: 200px;
-        }
-
-        .first-column {
-            width: 220px;
-        }
+      display: grid;
+      grid-template-columns: 13.75rem 1fr; /* Primeira coluna fixa e gêneros ao lado */
+  
+      /* Primeira coluna com estilos específicos */
+      .first-column {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+  
+      /* Gêneros em 3 colunas */
+      .genres-section {
+        border-left: 0.125rem solid rgb(35, 37, 43); /* Linha divisória vertical */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+      }
+  
+      /* Título "Gêneros" */
+      .dropdown-title {
+        grid-column: span 3; /* Ocupa as 3 colunas */
+        font-size: 16px;
+        color: rgb(160, 160, 160);
+        padding: .8125rem 1rem;
+      }
     }
 
     .dropdown-item-2 {
         width: 18.75rem;
+        padding-left: 5%;
     }
 }
 
-/* Estilo do texto 'Gêneros' */
-.genero-text {
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(248, 245, 245);
-    height: 42px;
+.free-trial-set {
     display: flex;
-    align-items: center;
-    padding-left: 10px;
+    align-items: center; /* Alinha a coroa e o texto verticalmente */
+    padding: 0 13px;
+    font-weight: 600;
+    font-size: 10px;
+    font-family: "Lato", sans-serif;
+   
+    .joint-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; 
+      padding-left: 10px;
+      line-height: 0.875rem; /* Espaçamento entre as linhas de texto */
+    }
+  
+    .text-testfree {
+      margin: 0;
+      color: rgb(250, 184, 24);
+      font-weight: bold;
+    }
 }
-
-/* Linha divisória vertical */
-.vertical-divider {
-    width: 1px;
-    height: auto;
-    background-color: rgba(218, 218, 218, 0.623);
-    border: none;
-    margin: 0 12px;
-    align-self: stretch;
-}
-

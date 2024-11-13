@@ -1,9 +1,9 @@
 <!--O código insere o valor de column[:column] como parte da classe CSS -->
 <div class="dropdown-column <%= column[:column] %>"> 
     <% if column[:title] %> <!--Verifica se a chave :title está presente no hash da coluna.-->
-        <li><p class="dropdown-item genero-text"><%= column[:title] %></p></li>
+        <li class="dropdown-title genero-text"><p><%= column[:title] %></p></li>
     <% end %>
-
+    
     <% column[:items]&.each do |item| %>
         <li><a class="dropdown-item" href="<%= item[:href] %>"><%= item[:text] %></a></li>
     <% end %>
