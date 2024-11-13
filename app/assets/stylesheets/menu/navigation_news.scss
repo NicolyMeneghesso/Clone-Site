@@ -1,0 +1,57 @@
+/*Conf Menu Noticias e Navegar*/
+.dropdown-menu {
+    margin-top: -1px !important;
+    border-radius: 0 !important;
+    width: 861.4px;
+
+    /* Estilo geral para os itens do menu */
+    .dropdown-item {
+        color: rgb(218, 218, 218) !important;
+        height: 42px;
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+        padding: 12px 16px;
+
+        &:hover {
+            background-color: rgba(35, 37, 43, 0.9);
+            color: #fff !important;
+        }
+    }
+
+    /* Configuração do layout das colunas */
+    .dropdown-columns {
+        display: grid;
+        grid-template-columns: 13.75rem 1fr;
+        /* Primeira coluna fixa e gêneros ao lado */
+
+        /* Primeira coluna com estilos específicos */
+        .first-column {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+
+        /* Gêneros em 3 colunas */
+        .genres-section {
+            border-left: 0.125rem solid rgb(35, 37, 43);
+            /* Linha divisória vertical */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colunas iguais */
+        }
+
+        /* Título "Gêneros" */
+        .dropdown-title {
+            grid-column: span 3;
+            /* Ocupa as 3 colunas */
+            font-size: 16px;
+            color: rgb(160, 160, 160);
+            padding: .8125rem 1rem;
+        }
+    }
+}
+
+.dropdown-menu-2 {
+    width: 18.75rem !important;
+    padding-left: 5%;
+}

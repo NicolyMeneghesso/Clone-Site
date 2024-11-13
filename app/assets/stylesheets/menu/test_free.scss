@@ -1,0 +1,135 @@
+.free-trial-set {
+    display: flex;
+    align-items: center;
+    /* Alinha a coroa e o texto verticalmente */
+    padding: 0 13px;
+    font-weight: 600;
+    font-size: 10px;
+    font-family: "Lato", sans-serif;
+
+    .joint-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 10px;
+        line-height: 0.875rem;
+        /* Espaçamento entre as linhas de texto */
+    }
+
+    .text-testfree {
+        margin: 0;
+        color: rgb(250, 184, 24);
+        font-weight: bold;
+    }
+}
+
+.popover-container {
+    position: relative;
+
+    .popover-content {
+        position: absolute;
+        top: calc(100% + 13px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 360px;
+        height: 166px;
+        background-color: rgba(20, 20, 20, 0.966);
+        display: none;
+        z-index: 5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        /* Adiciona a seta para cima */
+        &::before {
+            content: '';
+            position: absolute;
+            top: -17px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -3.32px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent rgba(20, 20, 20, 0.966) transparent;
+        }
+
+        /* Permitir que o popover fique aberto ao passar o mouse */
+        &:hover {
+            display: block;
+        }
+    }
+
+    &:hover .popover-content {
+        display: block;
+    }
+
+    .popover-text {
+        position: relative;
+        color: #fff;
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        font-family: "Lato", sans-serif;
+        height: 100%; 
+        padding: 13px;
+        top: calc(100% - 332px);
+    
+        .title-container {
+            display: flex;
+            gap: 0.5rem; 
+        }
+    
+        .title-popover {
+            line-height: 1.625rem;
+            font-size: 1.25rem !important;
+            font-weight: 600 !important;
+        }
+    
+        .text-popover {
+            margin-top: 0.5rem; 
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+            font-weight: 500;
+            text-align: center;
+        }
+    }
+}
+
+.background-popover {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    .left-up-stars {
+        display: block;
+        height: 2.25rem;
+        left: -.125rem;
+        position: absolute;
+        top: 0;
+        width: 3.125rem;
+    }
+
+    .right-up-star {
+        height: 1rem;
+        position: absolute;
+        right: 4.1875rem;
+        top: .25rem;
+        width: 1.0625rem;
+    }
+
+    .right-bottom-lines-star {
+        bottom: -.375rem;
+        height: 4.9375rem;
+        position: absolute;
+        right: -.375rem;
+        width: 4.6875rem;
+    }
+
+    .left-bottom-lines {
+        bottom: -.3125rem;
+        height: 3.9375rem;
+        left: -.375rem;
+        position: absolute;
+        width: 4.375rem;
+    }
+}

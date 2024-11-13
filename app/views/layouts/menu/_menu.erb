@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+   <div class="container-fluid d-flex justify-content-around align-items-center">
+      <!-- Botão Toggle -->
+      <button class="navbar-toggler order-1 me-2" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Logo -->
+      <a class="navbar-brand d-flex align-items-center logo-container order-2" href="#">
+         <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" width="26" height="24" viewBox="0 0 24 24">
+            <path
+               d="M 11.998047 1.9960938 C 6.4750469 1.9960938 1.9980469 6.4730938 1.9980469 11.996094 C 1.9980469 17.519094 
+               6.4750469 21.996094 11.998047 21.996094 C 12.167047 21.996094 12.331047 21.980656 12.498047 21.972656 C 
+               7.7610469 21.710656 3.9980469 17.797094 3.9980469 12.996094 C 3.9980469 8.0250937 8.0270469 3.9960938 
+               12.998047 3.9960938 C 17.800047 3.9960938 21.711656 7.7590937 21.972656 12.496094 C 21.980656 12.329094 
+               21.998047 12.165094 21.998047 11.996094 C 21.998047 6.4730938 17.521047 1.9960938 11.998047 1.9960938 z M 
+               12.998047 5.9960938 C 9.1320469 5.9960938 5.9980469 9.1300938 5.9980469 12.996094 C 5.9980469 16.862094 
+               9.1320469 19.996094 12.998047 19.996094 C 16.864047 19.996094 19.998047 16.862094 19.998047 12.996094 C 
+               19.998047 12.368094 19.906953 11.763594 19.751953 11.183594 C 19.291953 12.249594 18.233047 12.996094 
+               16.998047 12.996094 C 15.341047 12.996094 13.998047 11.653094 13.998047 9.9960938 C 13.998047 8.4590938 
+               15.158437 7.20725 16.648438 7.03125 C 15.584437 6.37925 14.337047 5.9960938 12.998047 5.9960938 z">
+            </path>
+         </svg>
+         <span class="d-none d-lg-inline title-nav">Crunchyroll</span>
+      </a>
+      <!-- Menu lateral esquerda -->
+      <div class="collapse navbar-collapse order-3" id="navbarSupportedContent">
+         <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
+            <!--Item Navegação-->
+            <%= render partial: "layouts/menu/navigation" %>
+            <!-- Item Jogos -->
+            <%= render partial: "layouts/menu/games" %>
+            <!-- Item Notícias com Dropdown -->
+            <%= render partial: "layouts/menu/news" %>
+         </ul>
+         <!-- Menu Lateral Direito -->
+         <ul class="navbar-nav d-flex flex-row justify-content-end">
+            <!--test free-->
+            <%= render partial: "layouts/menu/test_free" %>
+            <!--search-->
+            <%= render partial: "layouts/menu/search" %>
+            <!--bookmark-->
+            <%= render partial: "layouts/menu/bookmark" %>
+            <!--user-->
+            <%= render partial: "layouts/menu/user" %>
+         </ul>
+      </div>
+   </div>
+</nav>
