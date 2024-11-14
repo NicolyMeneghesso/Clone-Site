@@ -8,9 +8,8 @@
 .nav-item {
     background-color: transparent;
     height: 3.75rem;
-    width: auto;
-    align-items: center;
     display: flex;
+    align-items: center;
     padding: 0 10px;
     font-family: "Lato", sans-serif;
     font-size: 1rem;
@@ -80,5 +79,22 @@
         font-size: 20px;
         transition: color 0.3s ease;
     }
+}
+
+/* Estilo para o fundo escuro */
+.body-overlay {
+    background-color: #23252bcc;
+    position: fixed;
+    top: 3.75rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; 
+    display: none; 
+}
+
+/* Mostrar o fundo quando o dropdown está aberto */
+.body-overlay.active {
+    display: block;
 }
 
