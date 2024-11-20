@@ -1,0 +1,84 @@
+.users {
+    .navbar {
+        background-color: rgb(35, 37, 43);
+        height: 3.75rem;
+        padding-left: 4% !important;
+        padding-right: 4% !important;
+    }
+
+    .nav-item {
+        background-color: transparent;
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        font-family: "Lato", sans-serif;
+        font-size: 1rem;
+
+        &:hover,
+        &.show {
+            background-color: rgba(20, 20, 20, 0.966) !important;
+        }
+    }
+
+    .nav-item.dropdown {
+        background-color: transparent;
+
+        &.show {
+            background-color: rgba(20, 20, 20, 0.966);
+        }
+
+        &:hover {
+            background-color: rgba(20, 20, 20, 0.966);
+        }
+
+        .dropdown-toggle {
+            color: rgb(255, 255, 255);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dropdown-menu {
+            background-color: rgb(20, 20, 20);
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+    }
+
+    .nav-link {
+        color: rgb(218, 218, 218) !important;
+    }
+
+
+    /* Logo Crunchyroll */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        &:hover {
+            .logo-svg {
+                fill: rgb(255, 255, 255);
+            }
+
+            .title-nav {
+                color: rgb(255, 255, 255);
+            }
+        }
+
+        .logo-svg {
+            width: 28px;
+            height: 26px;
+            fill: rgb(255, 100, 10);
+            transition: fill 0.3s ease;
+        }
+
+        .title-nav {
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 600;
+            color: rgb(255, 100, 10);
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+    }
+}
