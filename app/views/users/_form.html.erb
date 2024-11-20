@@ -1,27 +1,25 @@
 <%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+   <% if user.errors.any? %>
+      <div style="color: red">
+         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+         <ul>
+         <% user.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+         <% end %>
+         </ul>
+      </div>
+   <% end %>
+   <div class="create-input">
+      <div class="input-wrapper">
+         <%= form.text_field :email, id: "user_email", class: "email-field", placeholder: " " %>
+         <label for="user_email" class="text-hover-input">E-mail ou Número de Telefone</label>
+      </div>
   </div>
-
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+   <!-- <div>
+      <%= form.label :password, style: "display: block" %>
+      <%= form.text_field :password %>
+   </div>
+   <div>
+      <%= form.submit %>
+   </div> -->
 <% end %>
