@@ -1,0 +1,53 @@
+.page-background {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    bottom: 0; 
+    height: 100%; 
+    
+    .decorantion-line {
+        position: absolute;
+        inset-inline: 0; 
+        top: 0;
+        bottom: 0; 
+        pointer-events: none; 
+
+        .decorantion-line-main {
+            --lines-top-shift: -3.75rem;
+            position: absolute;
+            max-height: 100%;
+            fill: #2abdbb;
+            opacity: 0.3;
+        }
+
+        .decorantion-line-top-Left {
+            display: block;
+            max-width: 24.25rem;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            transform: translateY(var(--lines-top-shift));
+        }
+
+        .decorantion-line-top-Right {
+            display: block;
+            max-width: 28.5625rem;
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            transform: translateY(var(--lines-top-shift));
+        }
+
+        .decorantion-line-bottom-Left {
+            display: block;
+            max-width: 12.8125rem;
+            inset-block-end: 0;
+            inset-inline-start: 0;
+        }
+
+        .decorantion-line-bottom-Right {
+            display: block;
+            max-width: 50.875rem;
+            inset-block-end: 0;
+            inset-inline-end: 0;
+        }
+    }
+}

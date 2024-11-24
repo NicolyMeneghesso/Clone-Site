@@ -1,18 +1,23 @@
 .main-user {
-    margin-top: 60px;
     position: relative;
-    flex: 1 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     font-family: "Lato", sans-serif;
 
+    ::selection {
+        color: rgb(255, 100, 10); 
+    }
+
     .create {
-        flex: 1 1;
+        flex: 1;
         display: flex;
         justify-content: center;
         padding-inline: 1.25rem;
         min-height: 12.875rem;
         padding-block: 8.75rem 3.75rem;
+        padding-block-end: 10rem;
+        color: rgb(249, 249, 249);
 
         .main-card-create {
             max-width: 31rem;
@@ -33,7 +38,7 @@
             text-align: initial;
             width: 100%;
             padding: 1.25rem;
-            background-color: #141519;
+            background-color: rgb(20, 21, 25);
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -62,6 +67,125 @@
                 inset-inline-end: -1.625rem;
                 width: 6.625rem;
             }
+
+            /*Política de privacidade*/
+            .checkbox-all {
+                display: flex;
+                align-items: flex-start; /* Alinha checkbox e texto corretamente */
+              
+                .checkbox-inf {
+                  cursor: pointer;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  visibility: hidden; /* Esconde o input padrão */
+                }
+              
+                .checkbox-inf-body {
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex: 0 0 auto;
+                  height: 1.25rem;
+                  width: 1.25rem;
+                  background-color: rgb(25, 46, 56);
+                  border: 0.125rem solid rgb(160, 160, 160);
+                  transition: border-color 0.2s ease;
+                    
+                  .checkbox-front {
+                    fill: none;
+                    height: 100%;
+                    width: 100%;
+              
+                    .checkbox-back {
+                      stroke-linecap: round;
+                      stroke-dasharray: 180;
+                      stroke-dashoffset: 180;
+                      stroke: rgb(42, 189, 187);
+                      transition: stroke-dashoffset 0.2s ease;
+                    }
+                  }
+                }
+              
+                .check-inf {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem; /* Espaço entre elementos internos */
+                  color: rgb(160, 160, 160);
+                  cursor: pointer;
+                  position: relative;
+                  transition: color 0.2s ease;
+              
+                  &:hover {
+                    color: rgb(255, 255, 255);
+
+                    .checkbox-inf-body {
+                        border-color: rgb(255, 255, 255); 
+                    }
+                  }
+              
+                  .privacy-policy {
+                    color: rgb(255, 100, 10);
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+              
+                    &:hover {
+                      color: rgb(255, 255, 255);
+                    }
+                  }
+              
+                  .text-inf {
+                    line-height: 1.125rem;
+                    font-size: 0.875rem;
+                  }
+                }
+              
+                /* Quando o checkbox está marcado */
+                .checkbox-inf:checked + .check-inf .checkbox-inf-body {
+                    background-color: rgb(25, 46, 56);
+                    border-color: rgb(42, 189, 187); /* Borda muda para a cor de seleção */
+                }
+
+                .checkbox-inf:checked + .check-inf .checkbox-back {
+                    stroke-dashoffset: 0; /* Mostra o traço */
+                }
+            }
+        }
+    
+        .btn-main {
+            text-align: center;
+        
+            .btn-next {
+                height: 2.5rem;
+                min-width: 7.5rem;
+                padding: 0 1rem;
+                border-color: rgb(89, 89, 91) !important;
+                font-size: .875rem;
+                font-weight: 800;
+                color: rgb(89, 89, 91);
+            }
+        
+            &:hover, &:focus, &:active {
+                color: rgb(89, 89, 91); 
+                text-decoration: none; 
+            }
+        }
+
+        .text-inf {
+            line-height: 1.125rem;
+            font-size: 0.875rem;
+
+            .login {
+                color: rgb(255, 100, 10);
+                font-weight: 900;
+                text-decoration: none;
+                transition: color 0.2s ease;
+                
+                &:hover {
+                    color: rgb(255, 255, 255);
+                }
+            }
         }
     }
 }
@@ -72,8 +196,12 @@
     height: 3.75rem;
     border-bottom: .125rem solid rgb(89, 89, 91);
     font-family: "Lato", sans-serif;
+    transition: border-color 0.3s ease-in-out;
 
-   
+    &:focus-within {
+        border-color: rgb(255, 100, 10); 
+    }
+    
     .input-wrapper {
         position: relative;
         height: 100%;
@@ -88,12 +216,12 @@
             font-size: 1.125rem;
             line-height: 1.625rem;
             color: rgb(255, 255, 255);
+            transition: border-color 0.3s ease-in-out; 
 
-        
             &:focus + .text-hover-input,
             &:not(:placeholder-shown) + .text-hover-input {
                 transform: translate(-2rem, -1.875rem) scale(0.70);
-                color: #a0a0a0;
+                color: rgb(160, 160, 160);
             }
         }
 
@@ -106,51 +234,5 @@
             transition: transform 0.2s cubic-bezier(0.5, 0, 0.25, 1), color 0.2s;
             pointer-events: none; /* Desativa eventos no label */
         }
-    }
-}
-
-.decorantion-line {
-    z-index: 0;
-    position: absolute;
-    inset-block: 0;
-    inset-inline: 0;
-
-    .decorantion-line-main {
-        --lines-top-shift: -3.75rem;
-        position: absolute;
-        max-height: 100%;
-        z-index: -1;
-        fill: #2abdbb;
-        opacity: .3;
-    }
-
-    .decorantion-line-top-Left {
-        display: block;
-        max-width: 24.25rem;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        transform: translateY(var(--lines-top-shift));
-    }
-
-    .decorantion-line-top-Right {
-        display: block;
-        max-width: 28.5625rem;
-        inset-block-start: 0;
-        inset-inline-end: 0;
-        transform: translateY(var(--lines-top-shift));
-    }
-
-    .decorantion-line-bottom-Left {
-        display: block;
-        max-width: 12.8125rem;
-        inset-block-end: 0;
-        inset-inline-start: 0;
-    }
-
-    .decorantion-line-bottom-Right {
-        display: block;
-        max-width: 50.875rem;
-        inset-block-end: 0;
-        inset-inline-end: 0;
     }
 }

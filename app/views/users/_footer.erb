@@ -1,0 +1,82 @@
+<footer class="footer-create-login">
+   <ul class="footer-back d-flex justify-content-center align-items-center list-unstyled">
+      <li class="footer-links-back">
+         <a class="footer-link" href="https://www.crunchyroll.com/pt-br/tos/">Termos de Uso</a>
+      </li>
+      <div class="line-between"></div>
+      <li class="footer-links-back">
+         <a class="footer-link" href="https://intl.sonypictures.com/en/privacy-policy">Política de Privacidade</a>
+      </li>
+      <div class="line-between"></div>
+      <li class="footer-links-back">
+         <a class="footer-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Ferramentas de Consentimento de Cookies</a>
+      </li>
+   </ul>
+
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content custom-modal bg-black rounded-0">
+            <div class="modal-header custom-header">
+               <%= image_tag "logo-sony.png", style:"width: 120px"%>
+               <button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Close">
+                  <i class="fa-solid fa-x"></i>
+               </button>
+            </div>
+            <div class="modal-body custom-body">
+               <h5 class="title-modal">Centro de preferências de privacidade</h5>
+               <p class="text-modal">
+                  Quando visita um website, este pode armazenar ou recolher informações no seu navegador, principalmente na forma de 
+                  cookies. Esta informação pode ser sobre si, as suas preferências ou o seu dispositivo e é utilizada principalmente 
+                  para fazer o website funcionar conforme o esperado. A informação normalmente não o identifica diretamente, 
+                  mas pode dar-lhe uma experiência web mais personalizada. Uma vez que respeitamos o seu direito à privacidade, 
+                  pode optar por não permitir alguns tipos de cookies. Clique nos cabeçalhos das diferentes categorias para saber 
+                  mais e alterar as nossas configurações predefinidas. No entanto, o bloqueio de alguns tipos de cookies pode afetar 
+                  a sua experiência no website e os serviços que podemos oferecer.
+               </p>
+               <a class="link-modal" href="https://intl.sonypictures.com/en/privacy-policy">Mais informações</a>
+
+               <!-- Info Button -->
+               <h5 class="title-modal">Gerir preferências de cookies</h5>
+               <!-- Info Button -->
+               <div class="info-button" onclick="toggleContent(this)">
+                  <i class="icon fa-solid fa-plus"></i>
+                  <span class="info-text">Cookies Estritamente Necessários</span>
+                  <span class="info-status">Sempre ativos</span>
+               </div>
+               <p class="hidden-content">
+                  Estes cookies são necessários para o funcionamento do website e não podem ser desativados nos nossos sistemas. 
+                  Normalmente, só são definidos em resposta a ações do utilizador que equivalem a um pedido de serviços, como a 
+                  definição das suas preferências de privacidade, o início de sessão ou o preenchimento de formulários. Pode configurar 
+                  o seu browser para bloquear ou alertá-lo para estes cookies, mas algumas partes do website deixarão de funcionar.
+               </p>
+            </div>
+            <div>
+               <div class="modal-footer custom-footer">
+                  <button type="button" class="btn btn-modal btn-1">Rejeitar todos</button>
+                  <button type="button" class="btn btn-modal btn-2">Confirmar as minhas escolhas</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+<script>
+      function toggleContent(button) {
+      const icon = button.querySelector('.icon');
+      const hiddenContent = button.nextElementSibling;
+
+      // Alterna o ícone entre "+" e "-"
+      if (icon.classList.contains('fa-plus')) {
+         icon.classList.remove('fa-plus');
+         icon.classList.add('fa-minus');
+      } else {
+         icon.classList.remove('fa-minus');
+         icon.classList.add('fa-plus');
+      }
+
+      // Alterna a visibilidade do conteúdo escondido
+      hiddenContent.classList.toggle('active');
+   }
+</script>
