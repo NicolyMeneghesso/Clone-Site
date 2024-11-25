@@ -49,16 +49,19 @@
     overflow: hidden;
     color: rgb(251, 248, 248) !important;
     font-family: "Lato", sans-serif;
+    display: flex;
+    flex-direction: column;
 
     /* Header */
     .custom-header {
         height: 59.8px;
-        width: 575px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 15px 10px 30px;
         border-bottom: 1px solid rgb(251, 248, 248);
+        flex-shrink: 0;
     }
 
     /* Close Button */
@@ -82,10 +85,27 @@
 
     /* Body */
     .custom-body {
-        overflow-y: auto; /* Somente rolagem vertical */
-        overflow-x: hidden; /* Remove a rolagem horizontal */
-        padding: 0 30px; /* Espaçamento interno */
-        margin: 1px 0; /* Remove margens extras */
+        flex-grow: 1; 
+        overflow-y: auto; 
+        overflow-x: hidden; 
+        padding: 15px 30px; 
+        margin: 1px 0; 
+
+        &::-webkit-scrollbar {
+            width: 14px; 
+            background: rgb(216, 216, 216); 
+            border-radius: 10px; 
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: rgb(216, 216, 216); 
+            border-radius: 10px; 
+            border: 2px solid rgb(30, 30, 30); 
+        }
+       
+        &::-webkit-scrollbar-track {
+            background: rgb(20, 20, 20); 
+        }
       
         .title-modal {
             text-align: left;
@@ -93,73 +113,90 @@
             line-height: 1.5;
             margin: 10px 0;
             width: 100%;
+            font-weight: bold;
+        }
+
+        .title-modal-2 {
+            text-align: left;
+            font-size: 1em;
+            line-height: 1.5;
+            padding-bottom: 10px;
+            width: 100%;
+            font-weight: bold;
         }
       
         .text-modal {
             text-align: left;
-            width: 100%; /* Ajusta a largura para evitar estouro */
+            width: 100%; 
             font-size: 0.812em;
             line-height: 1.5;
             margin-bottom: 25px;
+            font-weight: 400;
         }
       
         .link-modal {
             color: rgb(0, 191, 255);
             text-align: left;
-            font-size: 0.875em;
-            text-decoration: none;
+            font-size: 0.95em;
       
             &:hover {
-                color: rgb(0, 134, 179);
-            }
-        }
-    
-        .info-button {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border: 1px solid rgb(89, 89, 91);
-            border-radius: 4px;
-            background-color: rgb(20, 20, 20);
-            color: #fff;
-            padding: 10px 15px;
-            font-size: 0.875em;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%; /* Tamanho total do modal */
-    
-            &:hover {
-                background-color: rgb(30, 30, 30);
-                color: rgb(0, 191, 255);
-            }
-    
-            .icon {
-                font-size: 1.25rem;
-                transition: transform 0.3s ease;
-            }
-    
-            .info-text {
-                flex-grow: 1; /* Ocupa o espaço disponível */
-                text-align: left;
-                margin-left: 10px;
-            }
-    
-            .info-status {
-                color: rgb(0, 191, 255);
                 text-decoration: none;
-                font-weight: bold;
             }
         }
     
-        .hidden-content {
-            display: none;
+        .expandable-container {
+            border: 1px solid rgb(216, 216, 216);
+            border-radius: 2px;
             margin-top: 10px;
-            font-size: 0.812em;
-            line-height: 1.5;
-    
-            &.active {
-                display: block;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        
+            .info-button {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 12px 15px;
+                cursor: pointer;
+        
+                .icon {
+                    font-size: 0.85rem;
+                    font-weight: bolder;
+                    transition: transform 0.3s ease;
+                    color: rgb(39, 69, 92);
+                }
+        
+                .info-text {
+                    flex-grow: 1;
+                    text-align: left;
+                    margin-left: 10px;
+                    font-weight: 700;
+                    font-size: 0.87em;
+                }
+        
+                .info-status {
+                    color: rgb(56, 96, 190);
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 0.813em;
+                }
+            }
+        
+            .hidden-content {
+                display: none;
+                padding: 10px 15px;
+                font-size: 0.812em;
+                line-height: 1.5;
+                text-align: left;
+        
+                p {
+                    margin: 0;
+                }
+            }
+        
+            &.active {       
+                .hidden-content {
+                    display: block;
+                }
             }
         }
     }
@@ -167,11 +204,13 @@
     /* Footer */
     .custom-footer {
         height: 72.6px;
+        width: 100%;
         border-top: 1px solid rgb(251, 248, 248);
         display: flex;
         align-items: center;
         justify-content: flex-end; 
         padding: 0;
+        flex-shrink: 0;
 
         .btn-modal {
             background-color: rgb(0, 191, 255);
