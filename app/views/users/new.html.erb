@@ -30,7 +30,7 @@
                      <span class="text-inf">
                         Eu quero receber as informações mais recentes da Crunchyroll, ofertas e notícias.
                         Todas as comunicações são sujeitas à nossa
-                        <a class="privacy-policy" href="https://intl.sonypictures.com/en/privacy-policy">Política de Privacidade</a>.
+                        <%= link_to "Política de Privacidade", "https://intl.sonypictures.com/en/privacy-policy", class: "privacy-policy" %>
                         Cancele a qualquer tempo.
                      </span>
                   </label>
@@ -42,7 +42,7 @@
             </div>
             <!--Conta-->
             <p class="text-inf">Já possui uma conta?
-               <a class="login" href="#"> LOGIN</a>
+               <%= link_to "LOGIN", "#", class: "login"%>
             </p>
 			</div>
 		</main>

@@ -1,12 +1,10 @@
 <!-- Item Notícias com Dropdown -->
 <li class="nav-item dropdown">
-   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Notícias
-   </a>
+   <%= link_to "Notícias", "#", class: "nav-link dropdown-toggle", role: "button", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
    <ul class="dropdown-menu dropdown-menu-2">
-      <li><a class="dropdown-item" href="https://www.crunchyroll.com/pt-br/news">Todas as Notícias</a></li>
-      <li><a class="dropdown-item" href="https://www.crunchyroll.com/pt-br/animeawards/">Anime Awards</a></li>
-      <li><a class="dropdown-item" href="https://www.crunchyroll.com/events/">Eventos & Experiências</a></li>
+      <li><%= link_to "Todas as Notícias", "https://www.crunchyroll.com/pt-br/news", class: "dropdown-item" %></li>
+      <li><%= link_to "Anime Awards", "https://www.crunchyroll.com/pt-br/animeawards/", class: "dropdown-item" %></li>
+      <li><%= link_to "Eventos & Experiências", "https://www.crunchyroll.com/events/", class: "dropdown-item" %></li>
    </ul>
 </li>
 

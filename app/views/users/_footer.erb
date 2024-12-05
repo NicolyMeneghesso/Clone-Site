@@ -1,15 +1,15 @@
 <footer class="footer-create-login">
    <ul class="footer-back d-flex justify-content-center align-items-center list-unstyled">
       <li class="footer-links-back">
-         <a class="footer-link" href="https://www.crunchyroll.com/pt-br/tos/">Termos de Uso</a>
+         <%= link_to "Termos de Uso", "https://www.crunchyroll.com/pt-br/tos/", class: "footer-link" %>
       </li>
       <div class="line-between"></div>
       <li class="footer-links-back">
-         <a class="footer-link" href="https://intl.sonypictures.com/en/privacy-policy">Política de Privacidade</a>
+         <%= link_to "Política de Privacidade", "https://intl.sonypictures.com/en/privacy-policy", class: "footer-link" %>
       </li>
       <div class="line-between"></div>
       <li class="footer-links-back">
-         <a class="footer-link" data-bs-toggle="modal" data-bs-target="#exampleModal">Ferramentas de Consentimento de Cookies</a>
+         <%= link_to "Ferramentas de Consentimento de Cookies", "#", class: "footer-link", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
       </li>
    </ul>
    <!-- Modal -->
@@ -32,7 +32,7 @@
                pode optar por não permitir alguns tipos de cookies. Clique nos cabeçalhos das diferentes categorias para saber 
                mais e alterar as nossas configurações predefinidas. No entanto, o bloqueio de alguns tipos de cookies pode afetar 
                a sua experiência no website e os serviços que podemos oferecer.<br>
-               <a class="link-modal" href="https://intl.sonypictures.com/en/privacy-policy">Mais informações</a>
+               <%= link_to "Mais informações", "https://intl.sonypictures.com/en/privacy-policy", class: "link-modal" %>
             </p>
             <!-- Info Button -->
             <h5 class="title-modal title-m2">Gerir preferências de cookies</h5>

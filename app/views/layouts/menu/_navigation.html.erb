@@ -1,15 +1,13 @@
 <!-- Item Navegar com Dropdown -->
 <li class="nav-item dropdown">
-   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Navegar
-   </a>
+   <%= link_to "Navegar", "#", class: "nav-link dropdown-toggle", role: "button", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } %>
    <ul class="dropdown-menu">
       <div class="dropdown-columns">
          <!-- Primeira Coluna -->
          <div class="first-column">
          <% dropdown_menu_items.select { |col| col[:column] == "first-column" }.each do |column| %>
             <% column[:items]&.each do |item| %>
-               <li><a class="dropdown-item" href="<%= item[:href] %>"><%= item[:text] %></a></li>
+               <li><%= link_to item[:text], item[:href], class: "dropdown-item" %></li>
             <% end %>
          <% end %>
          </div>
@@ -20,7 +18,7 @@
                <li class="dropdown-title"><%= column[:title] %></li>
             <% end %>
             <% column[:items]&.each do |item| %>
-               <li><a class="dropdown-item" href="<%= item[:href] %>"><%= item[:text] %></a></li>
+               <li><%= link_to item[:text], item[:href], class: "dropdown-item" %>
             <% end %>
          <% end %>
          </div>
