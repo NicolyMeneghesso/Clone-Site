@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     padding: 0 10px;
-    font-family: "Lato", sans-serif;
+    font-family: "Lato", sans-serif;    
     font-size: 1rem;
 
     &:hover,
@@ -22,6 +22,11 @@
 
 .nav-item.dropdown {
     background-color: transparent;
+
+    ::after {
+        margin-left: 0.5em !important;
+        vertical-align: .15em;
+    } 
 
     &.show {
         background-color: rgba(20, 20, 20, 0.966);

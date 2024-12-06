@@ -31,7 +31,6 @@ html {
 
 .footer-main {
    max-width: 1130px;
-   height: 6rem;
    padding-block-end: 1.125rem;
    border-top: 0.0625rem solid rgb(89, 89, 91);
   
@@ -52,36 +51,19 @@ html {
       background-color: rgb(74, 78, 88);
    }
 
-   .form-select {
-      max-width: 12rem; 
-      padding: 0.25rem 2rem 0.25rem 0.75rem; 
-      font-size: 0.875rem; 
-      border: 1px solid rgb(89, 89, 91);
-      background-color: transparent;
-      color: rgb(160, 160, 160);
-      border-radius: 4px;
-      transition: all 0.3s ease;
-      appearance: none; 
+   .dropup-center {
+      padding-left: .5rem;
+      padding-right: .75rem;
 
-      background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns%3d%22http://www.w3.org/2000/svg%22 viewBox%3d%220 0 4 5%22%3e%3cpath fill%3d%22rgb(160,160,160)%22 d%3d%22M2 0L0 2h4zM0 3l2 2 2-2z%22/%3e%3c/svg%3e');
-      background-repeat: no-repeat;
-      background-position: 0.5rem center; 
-      background-size: 0.75rem;
-
-      &:hover {
-         border-color: #ff640a;
-         color: #ff640a;
+      .btn-footer {
+         align-items: center;
+         color: #a0a0a0;
+         cursor: pointer;
+         display: flex;
+         height: 100%;
+         padding: .625rem;
+         transition: background-color .2s ease, color .2s ease;
+         width: 100%;
       }
-
-      &:focus {
-         box-shadow: none;
-         border-color: #ff640a;
-         color: #ff640a;
-      }
-   }
-
-   .form-select option {
-      background-color: #141519;
-      color: #fff; 
    }
 }
