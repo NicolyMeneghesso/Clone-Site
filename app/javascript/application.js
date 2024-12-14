@@ -4,6 +4,7 @@ import "controllers"
 
 import "./home/menu.js"
 import "./users/footer.js"
+import "./users/form.js"
 
 
 document.querySelectorAll('.dropup-center.dropup').forEach(item => {
