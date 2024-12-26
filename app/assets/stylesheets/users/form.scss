@@ -10,6 +10,10 @@
         border-color: rgb(255, 100, 10);
     }
 
+    &.invalid {
+        border-color: rgb(239, 67, 35); 
+    }
+
     .input-wrapper {
         position: relative;
         height: 100%;
@@ -28,7 +32,7 @@
 
             &:focus+.text-hover-input,
             &:not(:placeholder-shown)+.text-hover-input {
-                transform: translate(-2rem, -1.875rem) scale(0.70);
+                transform: translate(-2.20rem, -1.875rem) scale(0.70);
                 color: rgb(160, 160, 160);
             }
         }
@@ -41,7 +45,6 @@
             line-height: 1.625rem;
             transition: transform 0.2s cubic-bezier(0.5, 0, 0.25, 1), color 0.2s;
             pointer-events: none;
-            /* Desativa eventos no label */
         }
     }
 
