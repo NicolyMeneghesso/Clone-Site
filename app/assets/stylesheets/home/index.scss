@@ -1,0 +1,111 @@
+#carouselExampleFade {
+    .carousel-inner {
+        height: 100vh;
+        position: relative;
+
+        .carousel-item {
+            position: relative;
+            height: 100%;
+
+            .img-carousel {
+                width: 100%;
+                height: 135%;
+                top: 60px;
+                object-fit: cover;
+                position: relative;
+                z-index: 1;
+            }
+
+            // Adiciona o degradê na lateral esquerda
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background: radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.98) 18%, rgba(0, 0, 0, 0.85) 40%, rgba(0, 0, 0, 0.0) 100%);
+                pointer-events: none;
+            }
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 30%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 2;
+            padding: 2rem;
+            color: #fff;
+
+            .img-carousel-logo {
+                width: 326px;
+                top: 20px;
+                height: auto;
+                margin: 60px auto 15px 0;
+                display: block;
+            }
+
+            .caption {
+                font-size: 1rem;
+                text-align: left;
+                margin-bottom: 0.5rem;
+            }
+
+            .text-carousel {
+                font-size: 16px;
+                font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+                color: #dadada;
+                line-height: 1.5;
+                text-align: left;
+                max-width: 440px;
+                margin-bottom: 0.5rem;
+            }
+
+            a.btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                font-weight: bold;
+                margin-top: 1rem;
+            }
+        }
+    }
+
+    .arrow-carousel {
+        fill: rgb(255, 255, 255) !important; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px; 
+        height: 100%; 
+        position: absolute;
+        top: 0; 
+        z-index: 5; 
+        transition: background-color 0.3s ease, fill 0.3s ease;
+
+        &.carousel-control-prev {
+            left: 0; 
+        }
+
+        &.carousel-control-next {
+            right: 0; 
+        }
+
+        .arrow-carousel-detail {
+            width: 3rem; 
+            height: 3rem;
+            fill: rgb(255, 255, 255) !important; 
+            pointer-events: none; 
+        }
+
+        &:hover .arrow-carousel-detail {
+            fill: rgba(255, 255, 255, 0.704); 
+        }
+    }
+}

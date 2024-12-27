@@ -6,20 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let alertDivBorder = document.querySelector(".create-input")
     let isValidValue = false
 
+    //Função que verifica se é numero ou email
     inputField.addEventListener("input", function () {
-        const value = inputField.value
+        let value = inputField.value.replace(/\D/g, '')
 
-        // Verifica se é o primeiro número digitado
+         // Aplica a máscara: "11 99227 1149"
         if (/^\d+$/.test(value)) {
+            if (value.length <= 2) {
+                value = value.replace(/(\d{0,2})/, '$1'); // Apenas os dois primeiros dígitos (DDD)
+            } else if (value.length <= 7) {
+                value = value.replace(/(\d{2})(\d{0,5})/, '$1 $2'); // DDD + espaço após o DDD
+            } else {
+                value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '$1 $2 $3'); // Formato final
+            }
+            inputField.value = value; // Atualiza o valor do campo com a formatação
+
             dddMenu.style.display = "block";
             positionMenu(dddMenu);
-            inputField.type = "tel" // Ajusta para telefone
-            isValidValue = IsNumberValid(value)
+            inputField.type = "tel"; // Ajusta para telefone
+            isValidValue = IsNumberValid(value.replace(/\D/g, '')); // Passa somente números para validação
         } else {
             dddMenu.style.display = "none";
-            inputField.type = "email" // Ajusta para e-mail
-            isValidValue = IsEmailValid(value) 
-            inputField.style.paddingLeft = '0px'
+            inputField.type = "email"; // Ajusta para e-mail
+            isValidValue = IsEmailValid(value);
+            inputField.style.paddingLeft = '0px';
         }
 
         updateStyles(); // A função é chamada toda vez que o conteúdo do campo muda.
@@ -28,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function () {
     inputField.addEventListener("blur", function () { //Este evento é disparado quando o usuário sai do campo de entrada (perde o foco).
         updateStyles(); //A função é chamada para garantir que o estilo do alerta seja atualizado, mesmo que o usuário tenha saído do campo.
     });
-
-    function updateStyles() { // Essa função verifica a validade do valor inserido no campo
+    
+    // Essa função verifica a validade do valor inserido no campo
+    function updateStyles() { 
         if (!isValidValue) {
             alertDiv.innerText = "E-mail ou número de telefone inválido"
             alertDiv.style.color = "rgb(239, 67, 35)"
