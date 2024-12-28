@@ -45,4 +45,5 @@ module HomeHelper
             }
         ]
     end
+
 end
