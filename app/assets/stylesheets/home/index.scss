@@ -65,47 +65,94 @@
                 line-height: 1.5;
                 text-align: left;
                 max-width: 440px;
-                margin-bottom: 0.5rem;
+                margin-bottom: 32px;
             }
 
-            a.btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-                font-weight: bold;
-                margin-top: 1rem;
+            .watch-add {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0.5rem;
+                height: 50px;
+
+                .btn-watch {
+                    display: flex;
+                    align-items: center;
+                    height: 40px;
+                    padding: 0.5rem 1.2rem;
+                    border-radius: 0;
+                    line-height: 1.125rem;
+                    font-weight: bold;
+                    font-size: 14px;
+                    font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+                    color: #000;
+                    background-color: #ff640a;
+                    transition: background-color 0.3s ease, color 0.3s ease;
+
+                    .icon-arrow {
+                        margin-right: 4px;
+                        width: 24px;
+                        height: 23px;
+                        fill: rgb(0, 0, 0);
+                    }
+
+                    &:hover {
+                        background-color: #ff8c1a;
+                    }
+                }
+
+                .icon-bookmark {
+                    width: 40px;
+                    height: 40px;
+                    color: #ff640a;
+                    border: 2px solid #ff640a;
+                    ;
+                    border-radius: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    position: relative;
+                    transition: color 0.3s ease, border-color 0.3s ease;
+
+                    &:hover {
+                        color: #ff8c1a;
+                        border-color: #ff8c1a;
+                    }
+                }
             }
         }
     }
 
     .arrow-carousel {
-        fill: rgb(255, 255, 255) !important; 
+        fill: rgb(255, 255, 255) !important;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 64px; 
-        height: 100%; 
+        width: 64px;
+        height: 100%;
         position: absolute;
-        top: 0; 
-        z-index: 5; 
+        top: 0;
+        z-index: 5;
         transition: background-color 0.3s ease, fill 0.3s ease;
 
         &.carousel-control-prev {
-            left: 0; 
+            left: 0;
         }
 
         &.carousel-control-next {
-            right: 0; 
+            right: 0;
         }
 
         .arrow-carousel-detail {
-            width: 3rem; 
+            width: 3rem;
             height: 3rem;
-            fill: rgb(255, 255, 255) !important; 
-            pointer-events: none; 
+            fill: rgb(255, 255, 255) !important;
+            pointer-events: none;
         }
 
         &:hover .arrow-carousel-detail {
-            fill: rgba(255, 255, 255, 0.704); 
+            fill: rgba(255, 255, 255, 0.704);
         }
     }
 }

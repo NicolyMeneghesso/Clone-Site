@@ -4,46 +4,56 @@
       <div class="carousel-inner">
          <!-- Primeira Imagem do Carousel -->
          <div class="carousel-item active">
-         <%= image_tag "one-piece.png", class: "img-carousel" %>
-         <!-- Área Sobreposta -->
-         <div class="carousel-overlay">
-            <div class="text-light">
-               <%= image_tag "logo-one-piece.png", class: "img-carousel-logo" %>
-               <p class="caption">Dub | Leg</p>
-               <p class="text-carousel">
-               Embarque em uma jornada com One Piece. A épica série de anime criada pelo renomado Eiichiro Oda é um fenômeno, 
-               cativando corações de fãs de várias gerações ao longo de seus 25 anos de existência. Esta aventura em alto-mar é 
-               repleta de amizades inabaláveis, batalhas pela liberdade e a incessante busca pelos sonhos...
-               </p>
-               <a href="#" class="btn btn-warning fw-bold">Assistir Agora</a>
+            <%= image_tag "one-piece.png", class: "img-carousel" %>
+            <!-- Área Sobreposta -->
+            <div class="carousel-overlay">
+               <div class="text-light">
+                  <%= image_tag "logo-one-piece.png", class: "img-carousel-logo" %>
+                  <p class="caption">Dub | Leg</p>
+                  <p  p class="text-carousel">
+                     Embarque em uma jornada com One Piece. A épica série de anime criada pelo renomado Eiichiro Oda é um fenômeno, 
+                     cativando corações de fãs de várias gerações ao longo de seus 25 anos de existência. Esta aventura em alto-mar é 
+                     repleta de amizades inabaláveis, batalhas pela liberdade e a incessante busca pelos sonhos...
+                  </p>
+                  <div class="watch-add">
+                     <a href="#" class="btn btn-watch">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon-arrow" >
+                        <path d="M5.944 3C5.385 3 5 3.445 5 4.22v16.018c0 .771.384 1.22.945 1.22.234 0 
+                              .499-.078.779-.243l13.553-7.972c.949-.558.952-1.468 0-2.028L6.724 3.243C6.444 3.078 
+                              6.178 3 5.944 3m1.057 2.726l11.054 6.503L7 18.732l.001-13.006" />
+                        </svg>
+                        COMEÇAR A ASSISTIR T1 E1
+                     </a>
+                     <i class="fa-light fa-bookmark fa-lg icon-bookmark" data-bs-toggle="popover" data-bs-placement="top" data-bs-trigger="hover focus" data-bs-content="Adicionar na fila"></i>
+                  </div>
+               </div>
             </div>
          </div>
-         </div>
-         <!-- Segunda Imagem do Carousel -->
-         <div class="carousel-item position-relative">
+      <!-- Segunda Imagem do Carousel -->
+      <div class="carousel-item position-relative">
          <img src="..." class="d-block w-100 h-100" style="object-fit: cover;" alt="...">
-         <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));">
+         <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
             <div class="text-light ms-4">
-               <h5 class="fw-bold">Outro Título</h5>
-               <p>Descrição para outra imagem no carousel...</p>
+            <h5 class="fw-bold">Outro Título</h5>
+            <p>Descrição para outra imagem no carousel...</p>
             </div>
-         </div>
-         </div>
-         <!-- Terceira Imagem do Carousel -->
-         <div class="carousel-item position-relative">
-         <img src="..." class="d-block w-100 h-100" style="object-fit: cover;" alt="...">
          </div>
       </div>
-    <!-- Botões de Controle -->
+      <!-- Terceira Imagem do Carousel -->
+      <div class="carousel-item position-relative">
+         <img src="..." class="d-block w-100 h-100" style="object-fit: cover;" alt="...">
+      </div>
+      </div>
+      <!-- Botões de Controle -->
       <button class="carousel-control-prev arrow-carousel" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-carousel-detail" role="img" aria-hidden="true">
-            <path d="M15.4 16.6L14 18l-6-6 6-6 1.4 1.4-4.6 4.6z" />
-         </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-carousel-detail" role="img" aria-hidden="true">
+         <path d="M15.4 16.6L14 18l-6-6 6-6 1.4 1.4-4.6 4.6z" />
+      </svg>
       </button>
       <button class="carousel-control-next arrow-carousel" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-carousel-detail" role="img" aria-hidden="true">
-            <path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z" />
-         </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="arrow-carousel-detail" role="img" aria-hidden="true">
+         <path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z" />
+      </svg>
       </button>
    </div>
 </div>
