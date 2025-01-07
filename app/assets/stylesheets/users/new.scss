@@ -169,7 +169,17 @@
                 font-size: .875rem;
                 font-weight: 800;
                 color: rgb(89, 89, 91);
-            }          
+            }
+
+            .valid {
+                border-color: rgb(255, 100, 10) !important;
+                background-color: rgb(255, 100, 10) !important;
+                color: rgb(0, 0, 0) !important;
+
+                &:hover {
+                    background-color: rgb(255, 120, 20) !important;
+                }              
+            }
         }
 
         .text-inf {

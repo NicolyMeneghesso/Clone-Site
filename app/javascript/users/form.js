@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let alertDivBorder = document.querySelector(".create-input")
     let isValidValue = false
 
-    //Função que verifica se é numero ou email
+    //Função que verifica se é numero ou email  
     inputField.addEventListener("input", function () {
         let value = inputField.value.replace(/\D/g, '')
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             dddMenu.style.display = "none";
             inputField.type = "email"; // Ajusta para e-mail
-            isValidValue = IsEmailValid(value);
+            isValidValue = IsEmailValid(inputField.value.trim());
             inputField.style.paddingLeft = '0px';
         }
 
@@ -54,25 +54,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function IsNumberValid(number) {
         if (number.length == 11) {
-            btnNext.style.backgroundColor = "rgb(255, 100, 10)"
-            btnNext.style.borderColor = "rgb(255, 100, 10)"
-            btnNext.style.color = "black"
-
-            btnNext.addEventListener("mouseenter", () => {
-                btnNext.style.backgroundColor = "rgb(255, 120, 20)" // Cor mais clara ao passar o mouse
-            });
-
-            btnNext.addEventListener("mouseleave", () => {
-                btnNext.style.backgroundColor = "rgb(255, 100, 10)" // Volta para a cor original
-            });
-
+            configureButtonActive()
             return true;
         } else {
-            btnNext.style.backgroundColor = "transparent"
-            btnNext.style.borderColor = "rgb(89, 89, 91)"
-            btnNext.style.color = "rgb(89, 89, 91)"
+            configureButtonInactive()
+            return false;
         }
-        return false;
     }
 
     function positionMenu(menu) {
@@ -89,25 +76,27 @@ document.addEventListener("DOMContentLoaded", function () {
             const isLettersOnly = /^[a-zA-Z]+$/.test(lastPart)
 
             if (lastPart.length >= 2 && isLettersOnly) {
-                btnNext.style.backgroundColor = "rgb(255, 100, 10)"
-                btnNext.style.borderColor = "rgb(255, 100, 10)"
-                btnNext.style.color = "black"
-
-                btnNext.addEventListener("mouseenter", () => {
-                    btnNext.style.backgroundColor = "rgb(255, 120, 20)"; // Cor mais clara ao passar o mouse
-                });
-
-                btnNext.addEventListener("mouseleave", () => {
-                    btnNext.style.backgroundColor = "rgb(255, 100, 10)"; // Volta para a cor original
-                });
-
+                configureButtonActive()
                 return true;
             } else {
-                btnNext.style.backgroundColor = "transparent";
-                btnNext.style.borderColor = "rgb(89, 89, 91)";
-                btnNext.style.color = "rgb(89, 89, 91)";
+                configureButtonInactive()
             }
         }
         return false;
+    }
+
+    function configureButtonActive() {
+        if (!btnNext.classList.contains("valid")) {
+            btnNext.classList.add("valid")
+            btnNext.disabled = false
+        }
+    }
+
+    function configureButtonInactive() {
+
+        if (btnNext.classList.contains("valid")) {
+            btnNext.classList.remove("valid")
+            btnNext.disabled = true
+        }
     }
 });

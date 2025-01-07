@@ -15,28 +15,21 @@
          <%= form.text_field :email_or_phone, id: "email_or_phone", class: "email-field", placeholder: " " %>
          <label for="email_or_phone" class="text-hover-input" id="invalid-alert" >E-mail ou Número de Telefone</label>
          <div class="dropdown" id="ddd-menu">
-            <%= link_to "#", class: "btn dropdown-toggle dropdown-ddd", role: "button", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } do %>
-               <span class="country-code">BR</span>
-               <span class="country-number">+55</span>
+         <%= link_to "#", class: "btn dropdown-toggle dropdown-ddd", role: "button", data: { bs_toggle: "dropdown" }, aria: { expanded: "false" } do %>
+            <span class="country-code">BR</span>
+            <span class="country-number">+55</span>
+         <% end %>
+         <ul class="dropdown-menu drop-menu-ddd">
+            <% dropdown_menu_ddd.each do |item| %>
+               <li class="drop-menu-item d-flex justify-content-between align-items-center">
+               <span class="country-code-item"><%= item[:text] %></span>
+               <span class="country-number-item"><%= item[:number] %></span>
+               <span class="country-item"><%= item[:country] %></span>
+               </li>
             <% end %>
-            <ul class="dropdown-menu drop-menu-ddd">
-               <% dropdown_menu_ddd.each do |item| %>
-                  <li class="drop-menu-item d-flex justify-content-between align-items-center">
-                     <span class="country-code-item"><%= item[:text] %></span>
-                     <span class="country-number-item"><%= item[:number] %></span>
-                     <span class="country-item"><%= item[:country] %></span>
-                  </li>
-               <% end %>
-            </ul>
+         </ul>
          </div>
       </div>
-  </div>
-
-   <!-- <div>
-      <%= form.label :password, style: "display: block" %>
-      <%= form.text_field :password %>
    </div>
-   <div>
-      <%= form.submit %>
-   </div> -->
+    
 <% end %>
