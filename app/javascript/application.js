@@ -8,12 +8,14 @@ import "./users/footer.js"
 import "./users/form.js"
 
 
-document.querySelectorAll('.dropup-center.dropup').forEach(item => {
-    item.addEventListener('show.bs.dropdown', () => {
-        item.classList.add('show');
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.dropup-center.dropup').forEach(item => {
+        item.addEventListener('show.bs.dropdown', () => {
+            item.classList.add('show');
+        });
 
-    item.addEventListener('hide.bs.dropdown', () => {
-        item.classList.remove('show');
+        item.addEventListener('hide.bs.dropdown', () => {
+            item.classList.remove('show');
+        });
     });
 });

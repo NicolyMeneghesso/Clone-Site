@@ -1,5 +1,5 @@
 module ApplicationHelper
-    def dropdown_menu_items_footer
+    def dropdown_menu_itens_footer
         [
             { text: "Inglês (EUA)"},
             { text: "Espanhol"},

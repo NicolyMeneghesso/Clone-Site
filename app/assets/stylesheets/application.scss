@@ -67,7 +67,7 @@ html {
       }
 
       &:hover {
-         background-color: rgb(35, 37, 43);
+         background-color: rgb(35, 37, 43) !important;
       }
 
       .btn-footer {
@@ -88,13 +88,13 @@ html {
             color: rgb(255, 255, 255);
          }
       }
-
+   
       .drop-menu-footer {
          transform: translate3d(-1.5px, -41.5px, 0px) !important;
          background-color: rgb(35, 37, 43);
          width: 214px;
 
-         .dropdown-item-footer{
+         .dropdown-item-footer {
             align-items: center;
             color: #a0a0a0;
             cursor: pointer;
