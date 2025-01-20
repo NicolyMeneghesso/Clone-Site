@@ -99,4 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
             btnNext.disabled = true
         }
     }
+
+    function btnNext() {
+        alert('oi')
+    }
 });
